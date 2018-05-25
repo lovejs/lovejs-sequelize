@@ -1,0 +1,6 @@
+services:
+    sequelize.graphqlizer:
+        module:    !plugin_dir /graphql/Graphqlizer
+        args:
+            - !service  sequelize
+            - !services { tag: sequelize.model, indexBy: tag.model }
