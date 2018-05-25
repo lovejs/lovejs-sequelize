@@ -1,10 +1,19 @@
 {
     "name": "@lovejs/sequelize",
+    "author": "Vincent <vincent@fullstack.pro>",
     "version": "0.0.1",
-    "description": "",
+    "description": "Lovejs sequelize",
     "main": "src/index.js",
-    "author": "",
-    "license": "ISC",
+    "keywords": ["lovejs", "sequelize", "lovejs plugin"],
+    "license": "MIT",
+    "homepage": "http://lovejs.io/",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lovejs/lovejs-sequelize.git"
+    },
+    "bugs": {
+        "url": "https://github.com/lovejs/lovejs-sequelize/issues"
+    },
     "dependencies": {
         "base-64": "^0.1.0"
     },
