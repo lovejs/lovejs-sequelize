@@ -15,15 +15,11 @@
         "url": "https://github.com/lovejs/lovejs-sequelize/issues"
     },
     "dependencies": {
-        "base-64": "^0.1.0"
-    },
-    "devDependencies": {
-        "jest": "^21.2.1",
-        "regenerator-runtime": "^0.11.0"
+        "base-64": "^0.1.0",
+        "sequelize": "^5.0.0-beta.6"
     },
     "peerDependencies": {
         "@lovejs/components": "^0.0.1",
-        "@lovejs/framework": "^0.0.1",
-        "sequelize": "^4.0.0"
+        "@lovejs/framework": "^0.0.1"
     }
 }
