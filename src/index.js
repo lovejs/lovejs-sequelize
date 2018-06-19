@@ -1,3 +1,4 @@
+const sequelize = require("sequelize");
 const { Plugin } = require("@lovejs/framework");
 const {
     di: {
@@ -7,6 +8,10 @@ const {
 } = require("@lovejs/components");
 
 class SequelizePlugin extends Plugin {
+    static get sequelize() {
+        return sequelize;
+    }
+
     async registerServices(container, name, isCli) {
         container.setParameter("sequelize.databases", this.get("databases"));
         await container.loadDefinitions(__dirname + "/_framework/services/services.yml", name);

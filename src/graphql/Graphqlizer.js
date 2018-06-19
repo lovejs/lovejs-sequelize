@@ -101,7 +101,7 @@ class Graphqlizer {
                         const isAssociationMultiple = association.isMultiAssociation === true;
                         const associationName = isAssociationMultiple ? association.options.name.plural : association.options.name.singular;
                         const propertyName = graphqlOptions.name || associationName;
-                        const getterName = `get${this.Sequelize.Utils.uppercaseFirst(associationName)}`;
+                        const getterName = `get${_.upperFirst(associationName)}`;
 
                         gqlProperties[propertyName] = isAssociationMultiple ? `[${targetType}]` : targetType;
                         gqlResolvers[propertyName] = this.getGetterResolver(getterName);
