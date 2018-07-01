@@ -2,7 +2,7 @@ const sequelize = require("sequelize");
 const { Plugin } = require("@lovejs/framework");
 const {
     di: {
-        Definitions: { Arguments, Call, Factory, Service, Tag },
+        Definitions: { Factory, Service, Tag },
         helpers: { _service }
     }
 } = require("@lovejs/components");
@@ -40,7 +40,6 @@ class SequelizePlugin extends Plugin {
         }
 
         const modelsDefinitions = container.getServicesTags("sequelize.model.definition");
-        const registry = container.getService("sequelize.registry");
 
         modelsDefinitions.map(({ id, tag }) => {
             const { model, database, service } = tag.getData();
@@ -59,12 +58,5 @@ class SequelizePlugin extends Plugin {
         registry.setupAssociations();
     }
 }
-
-const schema = {
-    type: "object",
-    properties: {
-        databases: { type: "object" }
-    }
-};
 
 module.exports = SequelizePlugin;
