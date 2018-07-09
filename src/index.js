@@ -25,6 +25,7 @@ class SequelizePlugin extends Plugin {
         if (!logger) {
             logger = container.hasService("logger.sequelize") ? "logger.sequelize" : "logger.default";
         }
+
         container.setParameter("sequelize.logger", logger);
 
         for (let database in this.get("databases")) {

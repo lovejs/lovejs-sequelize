@@ -48,9 +48,10 @@ class SequelizeRegistry {
 
         connection.logging = e => {
             if (e instanceof Error) {
-                console.log("e is an error in sequelize registry :(");
+                this.logger.log({ database: name, message: e.message, level: "error" });
+            } else {
+                this.logger.log({ database: name, message: e });
             }
-            this.logger.debug(e);
         };
 
         args.push(connection);
